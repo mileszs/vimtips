@@ -6,5 +6,6 @@
     %title= yield(:title).blank? ? "VimTweets" : "#{yield(:title)} - VimTweets"
 
     = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
   %body
     = yield

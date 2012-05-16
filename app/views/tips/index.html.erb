@@ -1,0 +1,31 @@
+<input placeholder="Search…" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+
+<ul data-bind="template: {name:'tip', foreach:tips}"></ul>
+
+<script id="tip" type="text/html">
+  <li>
+    <span data-bind="text: body"> - </span>
+  </li>
+</script>
+
+<script>
+  var tips = <%= Tip.all.to_json.html_safe %>;
+
+  var viewModel = {
+    tips: ko.observableArray(JSON.parse(JSON.stringify(tips))),
+    query: ko.observable(''),
+    search: function(value) {
+      // remove all the current tips, which removes them from the view
+      viewModel.tips.removeAll();
+
+      for (var x in tips) {
+        if (tips[x].body.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+          viewModel.tips.push(tips[x]);
+        }
+      }
+    }
+  };
+
+  viewModel.query.subscribe(viewModel.search);
+  ko.applyBindings(viewModel);
+</script>

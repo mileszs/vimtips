@@ -1,0 +1,13 @@
+:javascript
+  var tips = [{body: 'Testing number 1'}, {body: 'Testing number 2'}];
+  var viewModel = {
+    tips: ko.observableArray(tips)
+  };
+
+  ko.applyBindings(viewModel);
+
+%ul{"data-bind" => "template: {name:'tip', foreach:tips}"}
+
+%script{:type => "text/html", :id => "tip"}
+  %li
+    %span{"data-bind" => "text: body"}
