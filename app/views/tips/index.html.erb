@@ -1,15 +1,20 @@
-<input placeholder="Search…" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+<form class="nice">
+  <input placeholder="Search…" type="text" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" class="input-text">
+</form>
 
-<ul data-bind="template: {name:'tip', foreach:tips}"></ul>
+<ul data-bind="template: {name:'tip', foreach:tips}" id="tips"></ul>
 
 <script id="tip" type="text/html">
   <li>
-    <span data-bind="text: body"> - </span>
+    <p data-bind="html: body"> - </p>
   </li>
 </script>
 
 <script>
   var tips = <%= Tip.all.to_json.html_safe %>;
+  for (var i = 0; i < tips.length - 1; i++) {
+    tips[i]['body'] = tips[i]['body'].linkify();
+  }
 
   var viewModel = {
     tips: ko.observableArray(JSON.parse(JSON.stringify(tips))),

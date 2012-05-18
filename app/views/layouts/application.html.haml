@@ -8,4 +8,14 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
   %body
-    = yield
+    .container
+      .row
+        .eight.columns
+          = yield
+        .four.columns
+          %p
+            %strong Welcome to Vimtweets!
+          %p
+            This collection of Vim tips are tweeted on weekdays over at&nbsp;
+            %a{:href => 'http://twitter.com/vimtips'}>@vimtips
+            \. Enjoy!
