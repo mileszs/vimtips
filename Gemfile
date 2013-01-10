@@ -8,7 +8,7 @@ gem 'haml-rails'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
-gem 'twitter'
+gem 'twitter', "2.5.0"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
