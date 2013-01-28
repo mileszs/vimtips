@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'thin'
 
 gem 'mongo_mapper'
 gem 'bson_ext'
@@ -26,7 +27,6 @@ group :development, :test do
   gem 'minitest'
   gem 'watchr'
   gem 'turn', :require => false
-  gem 'thin'
   gem 'rr'
   gem 'capybara'
   gem 'capybara-webkit'
