@@ -1,5 +1,6 @@
 <form class="nice">
   <input placeholder="Search…" type="text" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off" class="input-text">
+  <p><span data-bind="text: resultLength"></span> of <span data-bind="text: total"></span>
 </form>
 
 <ul data-bind="template: {name:'tip', foreach:tips}" id="tips"></ul>
@@ -8,35 +9,4 @@
   <li>
     <p data-bind="html: body"> - </p>
   </li>
-</script>
-
-
-<script>
-  // var tips = {};
-
-
-  // var viewModel = {
-  //   tips: ko.observableArray([]),
-  //   query: ko.observable(''),
-  //   search: function(value) {
-  //     // remove all the current tips, which removes them from the view
-  //     viewModel.tips.removeAll();
-  //     for (var x in tips) {
-  //       if (tips[x].body.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-  //         viewModel.tips.push(tips[x]);
-  //       }
-  //     }
-  //   }
-  // };
-
-  // viewModel.query.subscribe(viewModel.search);
-  // ko.applyBindings(viewModel);
-
-  // $.getJSON('/tips.json', function(data) {
-  //   parsedTips = data;
-  //   for (var i = 0; i < parsedTips.length - 1; i++) {
-  //     parsedTips[i]['body'] = parsedTips[i]['body'].linkify();
-  //     viewModel.tips.push(parsedTips[i]);
-  //   }
-  // });
 </script>
