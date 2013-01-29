@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require knockout-2.2.2.1
 //= require foundation
 //= require_tree .

@@ -1,3 +1,3 @@
 VimtweetsCom::Application.routes.draw do
-  resources :tips
+  resources :tips, only: [:index]
 end
