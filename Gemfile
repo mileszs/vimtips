@@ -9,7 +9,7 @@ gem 'thin'
 gem 'mongo_mapper'
 gem 'bson_ext'
 
-gem 'twitter', "2.5.0"
+gem 'twitter'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
