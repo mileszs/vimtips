@@ -3,7 +3,7 @@ require 'twitter'
 desc "tweet a tip"
 task :tweet => :environment do
   if (1..5).include?(Date.today.wday)
-    client = Twitter::REST::Client.configure do |config|
+    client = Twitter::REST::Client.new do |config|
       config.consumer_key = 'WnR849wHagRyXXWWEVZsOzAPn'
       config.consumer_secret = 'YVzj9cliOeGRjW2u6DqCar6jvMU6eOYieJWELA8inGhTmpRupG'
       config.access_token = '15983724-VRueSjMB9Q2P8whWMHHasktamTehQgX44D7EXaMm5'
