@@ -10,12 +10,16 @@
   %body
     .container
       .row
-        .eight.columns
-          = yield
         .four.columns
           %p
             %strong Welcome to Vimtweets!
           %p
             This collection of Vim tips are tweeted on weekdays over at&nbsp;
             %a{:href => 'http://twitter.com/vimtips'}>@vimtips
+            \. Created by
+            %a{:href => 'http://mileszs.com'} MilesZS
+            and
+            %a{:href => 'http://getfretless.com'}> Fretless
             \. Enjoy!
+        .eight.columns
+          = yield
