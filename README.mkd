@@ -1,0 +1,6 @@
+# Vimtweets
+
+## TODO
+
++ Make sure re-auth rake task works
++ Move all twitter API keys and secrets to ENV variables
