@@ -24,6 +24,9 @@ gem 'heroku'
 
 gem 'factory_combiner', :git => 'git://gist.github.com/1854478.git'
 
+# This is dumb
+gem 'test-unit'
+
 group :development, :test do
   gem 'minitest'
   gem 'watchr'
